@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+$primaryLightColor: #ffffff;
+$accentBlueColor: #4682b4;
+$accentRedColor: #ff0157;
+$buttonColor: #c0bfbf;
+$quoteColor: #ff6347;
+$citeColor: #2e8b57;
+
+// fonts
+$hind: 'Hind', sans-serif;
+$fontAwsome: 'FontAwesome';
+$defaultFont: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+// special charcters
+$citeLine: '\2014\2009';
+$quoteMark: '\f10d';
+$rightBottomCorner: '\23a6';
+$leftTopCorner: '\23a1';
+
+// effect setting
+$easeEffect: cubic-bezier(0.5, 0, 0.5, 1);
+
+// mixin
+@mixin defaultStyle {
+    opacity: 0;
+    transition: opacity 500ms $easeEffect, transform 500ms $easeEffect;
+}
+
+@mixin quoteStyle($content) {
+    position: absolute;
+    content: $content;
+    font-size: 4em;
+    line-height: 1;
+
+    @if ($content == $rightBottomCorner) {
+        top: calc(100% + 20px);
+        left: calc(100% + 40px);
+        transform: translate(-50%, 50%) scale(0.8);
+    } @else if ($content == $leftTopCorner) {
+        top: 20px;
+        left: -40px;
+        transform: translate(-50%, -150%) scale(0.8);
+    }
+}

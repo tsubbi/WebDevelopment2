@@ -1,0 +1,49 @@
+@import "./styleSetting";
+@import "./defaultQuote";
+@import "./quoteEffect";
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: $defaultFont;
+    box-sizing: border-box;
+}
+
+body {
+    background: $primaryLightColor;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+#container {
+    width: 60vw;
+    height: 80%;
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 10vh 20vh;
+    gap: 20px;
+
+    .bench-img {
+        background: url(../img/bench.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    #output {
+        font-size: 26px;
+        color:  $quoteColor;
+    }
+
+    #btn {
+        margin: 30px auto;
+        height: 50px;
+        width: 250px;
+        font-size: 22px;
+        background: $buttonColor;
+    }
+}
