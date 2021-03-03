@@ -1,0 +1,62 @@
+#random-quote {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    
+    h1 {
+        font-size: 1.5em;
+        line-height: 1.2;
+        position: relative;
+        z-index: 2;
+        margin: 0;
+        text-align: center;
+    }
+    
+    h2 {
+        font-family: $hind;
+        font-size: 1.2em;
+        line-height: 2;
+        letter-spacing: 0.04em;
+        color: $citeColor;
+        
+        // &::before {
+        //     content: $citeLine;
+        // }
+    }
+}
+
+.effect {
+    opacity: 0.5;
+    transition: opacity 300ms $easeEffect;
+
+    .blockquote::after {
+        @include defaultStyle;
+        @include quoteStyle($rightBottomCorner);
+    }
+
+    .blockquote::before {
+        @include defaultStyle;
+        @include quoteStyle($leftTopCorner)
+    }
+
+    .cite {
+        @include defaultStyle;
+        transform: translateY(100%);
+    }
+
+    &:hover {
+        opacity: 1;
+        .cite {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        h1::after,
+        h1::before {
+            opacity: 0.1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+}
