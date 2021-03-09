@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Abel');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+$whiteTextColor: #ffffff;
+$superLightBgColor: #f8f8f8;
+$darkGrayTextColor: #333333;
+$accentRedColor: linear-gradient(#de695e, #ee786e);
+$greenCardBg: linear-gradient(#92bca6, #a2ccb6);
+
+// functions
+@function boxShadow($alpha) {
+    @return rgba(0, 0, 0, $alpha);
+}
